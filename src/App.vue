@@ -1,16 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <MouseComponent />
+  <DroidComponent />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+
+import MouseComponent from '@/components/MouseComponent.vue';
+import DroidComponent from '@/components/DroidComponent.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
-  },
+  components: { DroidComponent, MouseComponent },
 };
 </script>
 
@@ -21,6 +21,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+
+#logo{
+  width: 200px;
 }
 </style>
