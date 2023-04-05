@@ -767,6 +767,14 @@
         434.237 47.9287L427.654 68.9314L306.809 47.6348Z" fill="#918E8A" stroke="black"/>
       </svg>
       <div class="cuisse gauche">
+        <div class="mollet gauche">
+          <svg width="115" height="427" viewBox="0 0 115 427" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H115V194V384.123C115 407.803 95.8032 427 72.1228 427C48.4424 427 29.2457
+            407.803 29.2457 384.123V194L0 154V0Z" fill="#B3AFAA"/>
+          </svg>
+
+        </div>
         <svg width="198" height="543" viewBox="0 0 198 543" fill="none"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M197.927 99.7066C197.927 73.4165 187.501 47.6235 168.941 29.0336C150.382 10.4437
@@ -791,6 +799,7 @@ export default {
   data() {
     return {
       speed: 5,
+      hitbox: true,
     };
   },
   mounted() {
@@ -802,8 +811,9 @@ export default {
     const droidCuisseDroit = droidBody.querySelector('div.cuisse.droit');
     const droidCuisseGauche = droidBody.querySelector('div.cuisse.gauche');
     const droidMolletDroit = droidCuisseDroit.querySelector('div.mollet.droit');
+    const droidMolletGauche = droidCuisseGauche.querySelector('div.mollet.gauche');
 
-    gsap.set(droid, { opacity: 0 });
+    gsap.set(droid, { opacity: 0, borderStyle: this.hitbox ? 'solid' : 'none' });
     gsap.to(droid, { opacity: 1, duration: 2, ease: 'power2.in' });
     /* Timeline Principale de COURSE */
     const droidRun = gsap.timeline();
@@ -812,7 +822,7 @@ export default {
 
     droidRun.to(droidBody, {
       duration: 1 / this.speed,
-      y: -20,
+      y: -50,
       repeat: -1,
       yoyo: true,
       ease: 'inOut',
@@ -873,7 +883,7 @@ export default {
     });
     molletTL.to(droidMolletDroit, {
       duration: 1 / this.speed,
-      rotation: -120,
+      rotation: -150,
       ease: 'linear',
     });
     molletTL.to(droidMolletDroit, {
@@ -881,8 +891,29 @@ export default {
       rotation: -90,
       ease: 'linear',
     });
+    droidRun.set(droidMolletGauche, { rotation: -90 }, 0);
+    // Sous timeline de la jambe
+    const molletTLg = gsap.timeline({
+      repeat: -1,
+    });
+    molletTLg.to(droidMolletGauche, {
+      duration: 1 / this.speed,
+      rotation: -150,
+      ease: 'linear',
+    });
+    molletTLg.to(droidMolletGauche, {
+      duration: 1 / this.speed,
+      rotation: -90,
+      ease: 'linear',
+    });
+    molletTLg.to(droidMolletGauche, {
+      duration: (1 / this.speed) * 2,
+      rotation: -90,
+      ease: 'inOut',
+    });
     // Ajout de la sous timeline à la timeline principale
     droidRun.add(molletTL, 0);
+    droidRun.add(molletTLg, 0);
 
     let isJumping = false;
     window.addEventListener('keypress', (e) => {
@@ -895,9 +926,9 @@ export default {
         gsap.to(droid, {
           duration: 0.2,
           repeat: 1,
-          y: -100,
+          y: -200,
           yoyo: true,
-          ease: 'inOut',
+          ease: 'out',
         }).then(() => {
           isJumping = false;
           droidRun.restart();
@@ -910,12 +941,12 @@ export default {
 
 <style scoped lang="scss">
 div.droid{
-  position: relative;
-  height: 100vh;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: scale(0.3);
+  top: 50%;
+  transform: scale(0.2) translateY(-50%);
   div.body{
     position: relative;
     z-index: 5;
@@ -951,7 +982,7 @@ div.droid{
       left: 20%;
       &.gauche{
         z-index: -15;
-        &>svg path, >svg circle{
+        svg path, svg circle{
           fill: #797674;
         }
       }
@@ -961,7 +992,9 @@ div.droid{
         bottom: -60%;
         left: 50%;
         transform: translateX(-50%);
-        z-index: -1;
+        &.droite{
+          z-index: -1;
+        }
       }
     }
   }
