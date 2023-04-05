@@ -224,7 +224,74 @@
 
       </div>
       <div class="cuisse droit">
-        <div class="molet droit"></div>
+        <div class="mollet droit">
+          <svg width="115" height="427" viewBox="0 0 115 427"
+               fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H115V194V384.123C115 407.803 95.8032 427 72.1228 427C48.4424 427 29.2457
+            407.803 29.2457 384.123V194L0 154V0Z" fill="#B3AFAA"/>
+            <path d="M38 23H107V377H38V23Z" fill="#A02A25"/>
+            <g filter="url(#filter0_i_20_67)">
+              <rect x="10" y="73" width="20.8342" height="81.8486" fill="#9E9D9C"/>
+            </g>
+            <g filter="url(#filter1_ddii_20_67)">
+              <path d="M12.9763 73C12.9763 73 12.9763 73 20.4171 73C27.8579 73 27.8579 73 27.8579
+              73V150.878C27.8579 150.878 27.8579 154.849 20.4171 154.849C12.9763 154.849 12.9763
+              150.878 12.9763 150.878V73Z" fill="#7F918A"/>
+            </g>
+            <line x1="38" y1="322.5" x2="107" y2="322.5" stroke="black"/>
+            <defs>
+              <filter id="filter0_i_20_67" x="10" y="69" width="20.8342" height="85.8486"
+                      filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="-4"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow_20_67"/>
+              </filter>
+              <filter id="filter1_ddii_20_67" x="4.97632" y="69" width="30.8816" height="89.8486"
+                      filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="4"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_67"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="-4"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="effect1_dropShadow_20_67"
+                         result="effect2_dropShadow_20_67"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_20_67"
+                         result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="4"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="shape" result="effect3_innerShadow_20_67"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="-4"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="effect3_innerShadow_20_67"
+                         result="effect4_innerShadow_20_67"/>
+              </filter>
+            </defs>
+          </svg>
+
+        </div>
         <svg width="198" height="543" viewBox="0 0 198 543" fill="none"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M168.586 29.3868C186.931 47.7629 197.292 73.219 197.424 99.2066H98.9625L0.501263
@@ -734,75 +801,104 @@ export default {
     const droidEar = droidHead.querySelector('div.circle');
     const droidCuisseDroit = droidBody.querySelector('div.cuisse.droit');
     const droidCuisseGauche = droidBody.querySelector('div.cuisse.gauche');
-    const droidMoletDroit = droidBody.querySelector('div.molet.droit');
-    // animation du body
-    gsap.to(droidBody, {
+    const droidMolletDroit = droidCuisseDroit.querySelector('div.mollet.droit');
+
+    /* Timeline Principale de COURSE */
+    const droidRun = gsap.timeline();
+
+    /* Paramétrage de la timeline */
+
+    droidRun.to(droidBody, {
       duration: 1 / this.speed,
       y: -20,
       repeat: -1,
       yoyo: true,
       ease: 'inOut',
-    });
-    // animation du cou
-    gsap.to(droidNeck, {
+      position: 'start',
+    }, 0);
+    droidRun.to(droidNeck, {
       duration: 1 / this.speed,
       rotation: -10,
       repeat: -1,
       yoyo: true,
       ease: 'inOut',
-    });
-    // animation de la tête
-    gsap.set(droidHead, { rotation: -5 });
-    gsap.to(droidHead, {
+      position: 'start',
+    }, 0);
+    droidRun.set(droidHead, { rotation: -5 }, 0);
+    droidRun.to(droidHead, {
       duration: (1 / this.speed) * 2,
       rotation: 10,
       repeat: -1,
       yoyo: true,
       ease: 'inOut',
-    });
-    // animation de l'antenne
-    gsap.set(droidEar, { rotation: -10 });
-    gsap.to(droidEar, {
+      position: 'start',
+    }, 0);
+    droidRun.set(droidEar, { rotation: -10 });
+    droidRun.to(droidEar, {
       duration: 1 / this.speed,
       rotation: 20,
       repeat: -1,
       yoyo: true,
       ease: 'inOut',
-    });
-    // animation de la jambe
-    gsap.set(droidCuisseDroit, { rotation: 20 });
-    gsap.to(droidCuisseDroit, {
+      position: 'start',
+    }, 0);
+    droidRun.set(droidCuisseDroit, { rotation: 20 }, 0);
+    droidRun.to(droidCuisseDroit, {
       duration: (1 / this.speed) * 2,
       rotation: 80,
       repeat: -1,
       yoyo: true,
       ease: 'linear',
-    });
-    gsap.set(droidCuisseGauche, { rotation: 80 });
-    gsap.to(droidCuisseGauche, {
+      position: 'start',
+    }, 0);
+    droidRun.set(droidCuisseGauche, { rotation: 80 }, 0);
+    droidRun.to(droidCuisseGauche, {
       duration: (1 / this.speed) * 2,
       rotation: 20,
       repeat: -1,
       yoyo: true,
       ease: 'linear',
-    });
-    gsap.set(droidMoletDroit, { rotation: -60 });
-    gsap.to(droidMoletDroit, {
-      duration: (1 / this.speed) * 2,
-      rotation: -120,
+    }, 0);
+    droidRun.set(droidMolletDroit, { rotation: -90 }, 0);
+    // Sous timeline de la jambe
+    const molletTL = gsap.timeline({
       repeat: -1,
-      yoyo: true,
+    });
+    molletTL.to(droidMolletDroit, {
+      duration: (1 / this.speed) * 2,
+      rotation: -90,
+      ease: 'inOut',
+    });
+    molletTL.to(droidMolletDroit, {
+      duration: 1 / this.speed,
+      rotation: -120,
       ease: 'linear',
     });
+    molletTL.to(droidMolletDroit, {
+      duration: 1 / this.speed,
+      rotation: -90,
+      ease: 'linear',
+    });
+    // Ajout de la sous timeline à la timeline principale
+    droidRun.add(molletTL, 0);
+
+    let isJumping = false;
     window.addEventListener('keypress', (e) => {
       // space
       if (e.code === 'Space') {
+        if (isJumping) return;
+        isJumping = true;
+        droidRun.pause();
+        gsap.set(droid, { y: 0 });
         gsap.to(droid, {
-          duration: 0.1,
-          repeat: 5,
-          opacity: 0,
+          duration: 0.2,
+          repeat: 1,
+          y: -100,
           yoyo: true,
-          ease: 'steps(1)',
+          ease: 'inOut',
+        }).then(() => {
+          isJumping = false;
+          droidRun.restart();
         });
       }
     });
@@ -817,7 +913,7 @@ div.droid{
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: scale(0.5);
+  transform: scale(0.3);
   div.body{
     position: relative;
     z-index: 5;
@@ -857,11 +953,13 @@ div.droid{
           fill: #797674;
         }
       }
-      div.molet{
-        border-radius: 50px;
+      div.mollet{
         position: absolute;
-        transform-origin: 50% 5%;
-        bottom: -70%;
+        transform-origin: 50% 10%;
+        bottom: -60%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
       }
     }
   }
