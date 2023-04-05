@@ -833,7 +833,7 @@ export default {
       ease: 'inOut',
       position: 'start',
     }, 0);
-    droidRun.set(droidEar, { rotation: -10 });
+    droidRun.set(droidEar, { rotation: -10 }, 0);
     droidRun.to(droidEar, {
       duration: 1 / this.speed,
       rotation: 20,
