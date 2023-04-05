@@ -1,16 +1,21 @@
 <template>
-  <MouseComponent />
   <DroidComponent />
+  <!--
+  <MouseComponent />
+  -->
 </template>
 
 <script>
 
-import MouseComponent from '@/components/MouseComponent.vue';
+// import MouseComponent from '@/components/MouseComponent.vue';
 import DroidComponent from '@/components/DroidComponent.vue';
 
 export default {
   name: 'App',
-  components: { DroidComponent, MouseComponent },
+  components: {
+    DroidComponent,
+    // MouseComponent
+  },
 };
 </script>
 
