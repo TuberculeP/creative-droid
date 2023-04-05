@@ -225,6 +225,22 @@
       </div>
       <div class="cuisse droit">
         <div class="mollet droit">
+          <div class="pied droit">
+            <div class="orteil droit">
+              <svg width="48" height="15" viewBox="0 0 48 15" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 4.09092L17.6604 0L48 4.09092V15H0V4.09092Z" fill="#D9D9D9"/>
+              </svg>
+            </div>
+            <svg width="54" height="53" viewBox="0 0 54 53" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.35535 15.9673C4.55446 8.70371 9.82334 0 18.0213 0C20.8683 0 23.6024
+              1.1129 25.6401 3.10111L47.7912 24.7146L43.9679 42.9253H22.4619L8.35535 15.9673Z"
+                    fill="#D9D9D9"/>
+              <ellipse cx="42.7178" cy="41.6202" rx="10.8277" ry="10.5494" fill="#555350"/>
+              <ellipse cx="42.7175" cy="41.6202" rx="8.73201" ry="8.50762" fill="#D9D9D9"/>
+            </svg>
+          </div>
           <svg width="115" height="427" viewBox="0 0 115 427"
                fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0H115V194V384.123C115 407.803 95.8032 427 72.1228 427C48.4424 427 29.2457
@@ -290,7 +306,17 @@
               </filter>
             </defs>
           </svg>
+          <div class="talon droit">
+            <svg width="144" height="57" viewBox="0 0 144 57" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M144 0V28.9286L114.429 55.2857V27.6429L144 0Z" fill="#555350"/>
+              <path d="M0 51.4286L61.7143 40.2857V55.7143H0V51.4286Z" fill="#555350"/>
+              <path d="M68.5714 38.5713L118.286 32.5714V55.7143H68.5714V38.5713Z" fill="#555350"/>
+              <circle cx="65.1429" cy="45.8572" r="11.1429" fill="#51504E"/>
+              <circle cx="115.286" cy="40.7143" r="16.2857" fill="#51504E"/>
+            </svg>
 
+          </div>
         </div>
         <svg width="198" height="543" viewBox="0 0 198 543" fill="none"
              xmlns="http://www.w3.org/2000/svg">
@@ -768,12 +794,38 @@
       </svg>
       <div class="cuisse gauche">
         <div class="mollet gauche">
+          <div class="pied gauche">
+            <div class="orteil droit">
+              <svg width="48" height="15" viewBox="0 0 48 15" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 4.09092L17.6604 0L48 4.09092V15H0V4.09092Z" fill="#D9D9D9"/>
+              </svg>
+            </div>
+            <svg width="54" height="53" viewBox="0 0 54 53" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.35535 15.9673C4.55446 8.70371 9.82334 0 18.0213 0C20.8683 0 23.6024
+              1.1129 25.6401 3.10111L47.7912 24.7146L43.9679 42.9253H22.4619L8.35535 15.9673Z"
+                    fill="#D9D9D9"/>
+              <ellipse cx="42.7178" cy="41.6202" rx="10.8277" ry="10.5494" fill="#555350"/>
+              <ellipse cx="42.7175" cy="41.6202" rx="8.73201" ry="8.50762" fill="#D9D9D9"/>
+            </svg>
+          </div>
           <svg width="115" height="427" viewBox="0 0 115 427" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0H115V194V384.123C115 407.803 95.8032 427 72.1228 427C48.4424 427 29.2457
             407.803 29.2457 384.123V194L0 154V0Z" fill="#B3AFAA"/>
           </svg>
+          <div class="talon gauche">
+            <svg width="144" height="57" viewBox="0 0 144 57" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M144 0V28.9286L114.429 55.2857V27.6429L144 0Z" fill="#555350"/>
+              <path d="M0 51.4286L61.7143 40.2857V55.7143H0V51.4286Z" fill="#555350"/>
+              <path d="M68.5714 38.5713L118.286 32.5714V55.7143H68.5714V38.5713Z" fill="#555350"/>
+              <circle cx="65.1429" cy="45.8572" r="11.1429" fill="#51504E"/>
+              <circle cx="115.286" cy="40.7143" r="16.2857" fill="#51504E"/>
+            </svg>
 
+          </div>
         </div>
         <svg width="198" height="543" viewBox="0 0 198 543" fill="none"
              xmlns="http://www.w3.org/2000/svg">
@@ -812,9 +864,15 @@ export default {
     const droidCuisseGauche = droidBody.querySelector('div.cuisse.gauche');
     const droidMolletDroit = droidCuisseDroit.querySelector('div.mollet.droit');
     const droidMolletGauche = droidCuisseGauche.querySelector('div.mollet.gauche');
+    const piedDroit = droidMolletDroit.querySelector('div.pied');
+    const orteilDroit = piedDroit.querySelector('div.orteil');
+    const talonDroit = droidMolletDroit.querySelector('div.talon');
+    const piedGauche = droidMolletGauche.querySelector('div.pied');
+    const orteilGauche = piedGauche.querySelector('div.orteil');
+    const talonGauche = droidMolletGauche.querySelector('div.talon');
 
     gsap.set(droid, { opacity: 0, borderStyle: this.hitbox ? 'solid' : 'none' });
-    gsap.to(droid, { opacity: 1, duration: 2, ease: 'power2.in' });
+    gsap.to(droid, { opacity: 1, duration: 0, ease: 'power2.in' });
     /* Timeline Principale de COURSE */
     const droidRun = gsap.timeline();
 
@@ -822,7 +880,7 @@ export default {
 
     droidRun.to(droidBody, {
       duration: 1 / this.speed,
-      y: -50,
+      y: -30,
       repeat: -1,
       yoyo: true,
       ease: 'inOut',
@@ -911,9 +969,96 @@ export default {
       rotation: -90,
       ease: 'inOut',
     });
-    // Ajout de la sous timeline à la timeline principale
+
+    const piedDTL = gsap.timeline({ repeat: -1 })
+      .to(piedDroit, {
+        duration: (1 / this.speed) * 2,
+        rotate: 10,
+        ease: 'inOut',
+      })
+      .to(piedDroit, {
+        duration: 1 / this.speed,
+        rotate: 0,
+        ease: 'linear',
+      })
+      .to(piedDroit, {
+        duration: 1 / this.speed,
+        rotate: 70,
+        ease: 'linear',
+      });
+    const orteilDTL = gsap.timeline({ repeat: -1 })
+      .to(orteilDroit, {
+        duration: (1 / this.speed) * 2,
+        rotate: 15,
+        ease: 'inOut',
+      })
+      .to(orteilDroit, {
+        duration: (1 / this.speed) * 2,
+        rotate: 0,
+        ease: 'linear',
+      });
+    const talonDTL = gsap.timeline({ repeat: -1 })
+      .to(talonDroit, {
+        duration: (1 / this.speed) * 2,
+        rotate: 20,
+        ease: 'inOut',
+      })
+      .to(talonDroit, {
+        duration: (1 / this.speed) * 2,
+        rotate: 65,
+        ease: 'inOut',
+      });
+
+    const piedGTL = gsap.timeline({ repeat: -1 })
+      .to(piedGauche, {
+        duration: 1 / this.speed,
+        rotate: 0,
+        ease: 'linear',
+      })
+      .to(piedGauche, {
+        duration: 1 / this.speed,
+        rotate: 70,
+        ease: 'linear',
+      })
+      .to(piedGauche, {
+        duration: (1 / this.speed) * 2,
+        rotate: 10,
+        ease: 'inOut',
+      });
+    const orteilGTL = gsap.timeline({ repeat: -1 })
+      .to(orteilGauche, {
+        duration: (1 / this.speed) * 2,
+        rotate: 0,
+        ease: 'linear',
+      })
+      .to(orteilGauche, {
+        duration: (1 / this.speed) * 2,
+        rotate: 15,
+        ease: 'inOut',
+      });
+    const talonGTL = gsap.timeline({ repeat: -1 })
+      .to(talonGauche, {
+        duration: (1 / this.speed) * 2,
+        rotate: 65,
+        ease: 'inOut',
+      })
+      .to(talonGauche, {
+        duration: (1 / this.speed) * 2,
+        rotate: 20,
+        ease: 'inOut',
+      });
+
+    // Ajout des sous timelines à la timeline principale
     droidRun.add(molletTL, 0);
     droidRun.add(molletTLg, 0);
+
+    droidRun.add(piedDTL, 0);
+    droidRun.add(orteilDTL, 0);
+    droidRun.add(talonDTL, 0);
+
+    droidRun.add(piedGTL, 0);
+    droidRun.add(orteilGTL, 0);
+    droidRun.add(talonGTL, 0);
 
     let isJumping = false;
     window.addEventListener('keypress', (e) => {
@@ -994,6 +1139,28 @@ div.droid{
         transform: translateX(-50%);
         &.droite{
           z-index: -1;
+        }
+        div.pied{
+          position: absolute;
+          bottom: -5%;
+          right: -10%;
+          transform-origin: 0 0;
+          rotate: 70deg;
+          div.orteil{
+            position: absolute;
+            bottom: 0;
+            right: -80%;
+            transform-origin: 0 50%;
+            z-index: -1;
+          }
+        }
+        div.talon{
+          position: absolute;
+          z-index: -2;
+          left: -80%;
+          bottom: 10%;
+          transform-origin: 100% 0;
+          rotate: 65deg;
         }
       }
     }
