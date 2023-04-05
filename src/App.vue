@@ -1,20 +1,21 @@
 <template>
+  <div class="card-container">
+    <GitHubCardComponent username="TuberculeP" />
+    <GitHubCardComponent username="DalSchim" />
+  </div>
   <DroidComponent />
-  <!--
-  <MouseComponent />
-  -->
 </template>
 
 <script>
 
-// import MouseComponent from '@/components/MouseComponent.vue';
 import DroidComponent from '@/components/DroidComponent.vue';
+import GitHubCardComponent from '@/components/GitHubCardComponent.vue';
 
 export default {
   name: 'App',
   components: {
+    GitHubCardComponent,
     DroidComponent,
-    // MouseComponent
   },
 };
 </script>
@@ -34,5 +35,15 @@ body{
 
 #logo{
   width: 200px;
+}
+
+.card-container{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 </style>
