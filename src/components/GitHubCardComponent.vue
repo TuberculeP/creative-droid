@@ -19,17 +19,26 @@ export default {
     },
   },
   mounted() {
-    document.querySelector('a').href += this.username;
-    gsap.set('.card', { y: 100, opacity: 0 });
-    gsap.to('.card', {
+    const card = this.$el;
+    card.href += this.username;
+    card.target = '_blank';
+    gsap.set('.card', { y: -100, opacity: 0 });
+    const tl = gsap.timeline({ delay: 2 });
+    tl.to('.card', {
       y: 0,
-      opacity: 1,
       duration: 1,
       ease: 'bounce.out',
       stagger: {
         amount: 0.2,
       },
-    });
+    }, 0);
+    tl.to('.card', {
+      opacity: 1,
+      ease: 'linear',
+      stagger: {
+        amount: 0.2,
+      },
+    }, 0);
   },
 };
 </script>

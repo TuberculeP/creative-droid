@@ -803,6 +803,8 @@ export default {
     const droidCuisseGauche = droidBody.querySelector('div.cuisse.gauche');
     const droidMolletDroit = droidCuisseDroit.querySelector('div.mollet.droit');
 
+    gsap.set(droid, { opacity: 0 });
+    gsap.to(droid, { opacity: 1, duration: 2, ease: 'power2.in' });
     /* Timeline Principale de COURSE */
     const droidRun = gsap.timeline();
 
