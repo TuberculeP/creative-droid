@@ -1,5 +1,6 @@
 <template>
   <div class="card-container">
+    <p class="git-text">Press G for GitHubs</p>
     <GitHubCardComponent username="TuberculeP" />
     <GitHubCardComponent username="DalSchim" />
   </div>
@@ -8,6 +9,7 @@
 
 <script>
 
+import gsap from 'gsap';
 import DroidComponent from '@/components/DroidComponent.vue';
 import GitHubCardComponent from '@/components/GitHubCardComponent.vue';
 
@@ -16,6 +18,17 @@ export default {
   components: {
     GitHubCardComponent,
     DroidComponent,
+  },
+  mounted() {
+    window.addEventListener('keypress', (e) => {
+      if (e.key === 'g') {
+        gsap.to('.git-text', {
+          opacity: 0,
+          duration: 1,
+          ease: 'power4.out',
+        });
+      }
+    });
   },
 };
 </script>
@@ -40,8 +53,7 @@ body{
 .card-container{
   position: absolute;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 20px;
   display: flex;
   align-items: center;
   gap: 20px;

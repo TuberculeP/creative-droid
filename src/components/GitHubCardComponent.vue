@@ -22,23 +22,21 @@ export default {
     const card = this.$el;
     card.href += this.username;
     card.target = '_blank';
-    gsap.set('.card', { y: -100, opacity: 0 });
-    const tl = gsap.timeline({ delay: 2 });
-    tl.to('.card', {
-      y: 0,
-      duration: 1,
-      ease: 'bounce.out',
-      stagger: {
-        amount: 0.2,
-      },
-    }, 0);
-    tl.to('.card', {
-      opacity: 1,
-      ease: 'linear',
-      stagger: {
-        amount: 0.2,
-      },
-    }, 0);
+    gsap.set('.card', { x: -window.innerWidth, opacity: 0 });
+    window.addEventListener('keypress', (e) => {
+      if (e.key === 'g') {
+        gsap.to('.card', {
+          x: 0,
+          opacity: 1,
+          duration: 2,
+          ease: 'bounce.out',
+          stagger: {
+            amount: 0.5,
+            from: 'end',
+          },
+        });
+      }
+    });
   },
 };
 </script>
@@ -47,21 +45,21 @@ export default {
 a{
   text-decoration: none;
 }
-  .card{
-    padding: 0 15px;
-    width: fit-content;
-    box-sizing: border-box;
-    background-color: black;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    img{
-      filter: invert(1);
-    }
-    p{
-      color: white;
-      font-weight: bold;
-    }
+.card{
+  padding: 0 15px;
+  width: fit-content;
+  box-sizing: border-box;
+  background-color: black;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  img{
+    filter: invert(1);
   }
+  p{
+    color: white;
+    font-weight: bold;
+  }
+}
 </style>
