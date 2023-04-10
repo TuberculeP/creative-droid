@@ -1090,7 +1090,7 @@ div.droid{
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 50%;
+  bottom: 45px;
   transform: scale(0.2) translateY(-50%);
   div.body{
     position: relative;

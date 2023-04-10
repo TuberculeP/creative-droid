@@ -4,6 +4,7 @@
     <GitHubCardComponent username="TuberculeP" />
     <GitHubCardComponent username="DalSchim" />
   </div>
+  <MapComponent />
   <DroidComponent />
 </template>
 
@@ -12,12 +13,14 @@
 import gsap from 'gsap';
 import DroidComponent from '@/components/DroidComponent.vue';
 import GitHubCardComponent from '@/components/GitHubCardComponent.vue';
+import MapComponent from '@/components/MapComponent.vue';
 
 export default {
   name: 'App',
   components: {
     GitHubCardComponent,
     DroidComponent,
+    MapComponent,
   },
   mounted() {
     window.addEventListener('keypress', (e) => {
@@ -52,7 +55,7 @@ body{
 
 .card-container{
   position: absolute;
-  bottom: 20px;
+  bottom: 10%;
   right: 20px;
   display: flex;
   align-items: center;
