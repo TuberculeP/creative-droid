@@ -1069,7 +1069,7 @@ export default {
         droidRun.pause();
         gsap.set(droid, { y: 0 });
         gsap.to(droid, {
-          duration: 0.2,
+          duration: 0.5,
           repeat: 1,
           y: -200,
           yoyo: true,
@@ -1090,8 +1090,8 @@ div.droid{
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 45px;
-  transform: scale(0.2) translateY(-50%);
+  bottom: 70px;
+  transform: scale(0.2);
   div.body{
     position: relative;
     z-index: 5;

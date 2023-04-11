@@ -6,6 +6,7 @@
   </div>
   <MapComponent />
   <DroidComponent />
+  <ObstacleComponent />
 </template>
 
 <script>
@@ -14,15 +15,35 @@ import gsap from 'gsap';
 import DroidComponent from '@/components/DroidComponent.vue';
 import GitHubCardComponent from '@/components/GitHubCardComponent.vue';
 import MapComponent from '@/components/MapComponent.vue';
+import ObstacleComponent from '@/components/ObstacleComponent.vue';
 
 export default {
   name: 'App',
   components: {
+    ObstacleComponent,
     GitHubCardComponent,
     DroidComponent,
     MapComponent,
   },
   mounted() {
+    // while true pass, check if there is a collision, if yes, emmit an event and break
+    const droid = document.querySelector('.droid');
+    const obstacle = document.querySelector('.obstacle');
+
+    function defeat() {
+      console.log('defeat');
+      document.querySelectorAll('.droid *, .background-scroll, .obstacle').forEach((el) => {
+        gsap.killTweensOf(el);
+      });
+    }
+
+    const intervalId = setInterval(() => {
+      if (this.isThereCollision(droid, obstacle)) {
+        defeat();
+        clearInterval(intervalId);
+      }
+    }, 100);
+
     window.addEventListener('keypress', (e) => {
       if (e.key === 'g') {
         gsap.to('.git-text', {
@@ -32,6 +53,20 @@ export default {
         });
       }
     });
+  },
+  methods: {
+    isThereCollision(target, obstacle) {
+      // récupérer l'offset par rapport à la fenêtre et la taille
+      const targetRect = target.getBoundingClientRect();
+      const obstacleRect = obstacle.getBoundingClientRect();
+      // vérifier si les deux rectangles se chevauchent
+      return !(
+        targetRect.right < obstacleRect.left
+        || targetRect.left > obstacleRect.right
+        || targetRect.bottom < obstacleRect.top
+        || targetRect.top > obstacleRect.bottom
+      );
+    },
   },
 };
 </script>
