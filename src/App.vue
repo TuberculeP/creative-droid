@@ -1,12 +1,13 @@
 <template>
+  <MapComponent />
   <div class="card-container">
     <p class="git-text">Press G for GitHubs</p>
     <GitHubCardComponent username="TuberculeP" />
     <GitHubCardComponent username="DalSchim" />
   </div>
-  <MapComponent />
   <DroidComponent />
   <ObstacleComponent />
+  <VictoryComponent />
 </template>
 
 <script>
@@ -16,10 +17,12 @@ import DroidComponent from '@/components/DroidComponent.vue';
 import GitHubCardComponent from '@/components/GitHubCardComponent.vue';
 import MapComponent from '@/components/MapComponent.vue';
 import ObstacleComponent from '@/components/ObstacleComponent.vue';
+import VictoryComponent from '@/components/VictoryComponent.vue';
 
 export default {
   name: 'App',
   components: {
+    VictoryComponent,
     ObstacleComponent,
     GitHubCardComponent,
     DroidComponent,
@@ -35,6 +38,8 @@ export default {
       document.querySelectorAll('.droid *, .background-scroll, .obstacle').forEach((el) => {
         gsap.killTweensOf(el);
       });
+      document.querySelector('.victory').style.opacity = '1';
+      document.querySelector('.obstacle').classList.add('collision');
     }
 
     const intervalId = setInterval(() => {
@@ -90,7 +95,7 @@ body{
 
 .card-container{
   position: absolute;
-  bottom: 10%;
+  bottom: 20px;
   right: 20px;
   display: flex;
   align-items: center;

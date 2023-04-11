@@ -14,7 +14,8 @@ export default {
     gsap.set('.obstacle', { x: 0 });
     gsap.to('.obstacle', {
       x: -window.innerWidth,
-      duration: 5,
+      duration: 4,
+      rotate: -360 * 5,
       ease: 'linear',
       repeat: -1,
     });
@@ -30,11 +31,19 @@ export default {
   width: 100%;
 }
 .obstacle{
+  position: absolute;
   width: 100px;
   height: 100px;
-  background-color: #2c3e50;
-  position: absolute;
+  background: url("@/assets/bomb.png") center;
+  background-size: contain;
+  border-radius: 50%;
   right: 0;
   bottom: 0;
+}
+
+.obstacle.collision{
+  background: url("@/assets/explosion.gif");
+  width: 200px;
+  height: 200px;
 }
 </style>
